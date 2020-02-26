@@ -6,6 +6,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
+import moment from 'moment';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
@@ -354,7 +355,7 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else {
-        const dateString = day.toISOString();
+        const dateString = moment(day).format('YYYY-MM-DD');
         // this.dayRefs[dateString] = React.createRef();
         let selected = false;
         let inRange = false;
